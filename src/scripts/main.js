@@ -7,6 +7,8 @@ import { createWheat } from "./seeds/wheat.js"
 import { createPotato } from "./seeds/potato.js"
 import { addPlant } from "./field.js"
 import { usePlants } from "./field.js"
+import { plantSeeds } from "./tractor.js"
+import { harvestPlants } from "./harvester.js"
 
 const yearlyPlan = createPlan()
 const cornSeed = createCorn()
@@ -16,8 +18,10 @@ const asparagusSeed = createAsparagus()
 const wheatSeed = createWheat()
 const potatoSeed = createPotato()
 
-addPlant(soybeanSeed)
-addPlant(wheatSeed)
-const testPlant = usePlants()
-console.log(testPlant)
 
+plantSeeds(yearlyPlan)
+const something = usePlants()
+const somethingElse = harvestPlants(something)
+
+console.log(usePlants())
+console.log(somethingElse)
